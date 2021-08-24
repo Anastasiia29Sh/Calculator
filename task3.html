@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>task3</title>
+	<style>
+		/* эта часть для удобства, её тоже можно менять */
+		.first,
+		.second,
+		.third {
+			width: 100%;
+			height: 480px;
+			border: 1px solid red;
+			padding: 5px;
+			font-size: 25px;
+		}
+
+		.first * {
+			display: inline-block;
+			/* этот кусок использован, чтобы сбросить значения свойства display по умолчанию
+                Не убирайте его, и каждому элементу пропишите подходящее ему свойство display*/
+		}
+
+		/* первое задание */
+		.first span {
+			display: inline;
+			font-style: italic;
+			color: orchid;
+		}
+
+		.first p {
+			display: block;
+			height: 150px;
+		}
+
+		.first b {
+			display: inline;
+		}
+
+		.first i {
+			display: inline;
+		}
+
+		/* конец первого задания */
+
+		/* интерфейс примитивного калькулятора на grid */
+		.calculator1 {
+			display: grid;
+			width: 550px;
+			height: 450px;
+			/*определение кол-ва и ширины колонок*/
+			grid-template-columns: repeat(5, 1fr);
+			/*определение кол-ва и высоты строк*/
+			grid-template-rows: repeat(6, 1fr);
+			background-color: #000;
+			padding: 10px;
+			box-shadow: -21px 21px 34px -7px rgba(0, 0, 0, 0.54);
+			border-radius: 3%;
+			margin-left: 300px;
+		}
+
+		.B {
+			display: grid;
+			border-radius: 10%;
+			margin: 5px;
+			font-size: 32px;
+			font-weight: bolder;
+			background-color: #B8B7B7;
+			align-content: center;
+			text-align: center;
+			box-shadow: 27px -20px 31px -9px rgba(0, 0, 0, 0.4) inset;
+		}
+
+		.box00 {
+			/*объединение колонок*/
+			grid-column: span 5;
+			background-color: #4E4E4E;
+			border-radius: 0%;
+			box-shadow: 33px -25px 39px -4px rgba(28, 28, 28, 0.54) inset;
+
+		}
+
+		.box11,
+		.box12,
+		.box13 {
+			border-radius: 100%;
+		}
+
+		.box44 {
+			/*объединение строк*/
+			grid-row: span 2;
+		}
+
+		/* конец второго задания */
+
+
+		/* ************************************************************************************** */
+
+		/* интерфейс примитивного калькулятора на flex */
+		.calculator2 {
+			display: flex;
+			width: 550px;
+			height: 450px;
+			flex-direction: column;
+			background-color: #B8B7B7;
+			padding: 10px;
+			box-shadow: -21px 21px 34px -7px rgba(0, 0, 0, 0.54);
+			border-radius: 3%;
+			margin-left: 300px;
+			border: 3px solid #383838;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.Box00 {
+			background-color: #383838;
+			box-shadow: 33px -25px 39px -4px rgba(28, 28, 28, 0.54) inset;
+			width: 540px;
+			height: 65px;
+			margin-bottom: 5px;
+
+		}
+
+		.buttons {
+			height: 375px;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.left_box {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.M {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.numbers {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.line {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.right_box {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.col1,
+		.col2 {
+			display: flex;
+			flex-direction: column;
+		}
+
+
+		.BT {
+			display: flex;
+			width: 100px;
+			height: 65px;
+			border-radius: 10%;
+			margin: 5px;
+			font-size: 32px;
+			font-weight: bolder;
+			background-color: #000;
+			color: #fff;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 23px -25px 39px -4px rgba(146, 146, 146, 0.54) inset;
+		}
+
+		.Box11,
+		.Box12,
+		.Box13 {
+			border-radius: 100%;
+		}
+
+		.Box44 {
+			height: 140px;
+		}
+
+
+
+		/* конец третьего задания */
+	</style>
+</head>
+
+<body>
+	<h1>Свойство display</h1>
+	<div class="first">
+		<p>
+			Это обычный параграф, в котором выделены некоторые ключевые слова.
+			Например, следующиее слово выделено <i>курсивом</i>. А в этом <b>предложении некоторые</b> куски выделены
+			<b>жирным</b>.
+		</p>
+		<p>
+			Это обычный параграф. <span>А это вложенное в него стилизованное предложение.</span> Оно не должно нарушать
+			структуру параграфа.
+		</p>
+	</div>
+
+
+	<div class="second">
+		<div class="calculator1">
+			<div class="B box00"></div>
+
+			<div class="B box11">MRC</div>
+			<div class="B box12">M-</div>
+			<div class="B box13">M+</div>
+			<div class="B box14">CE</div>
+			<div class="B box15">ON/C</div>
+
+			<div class="B box21">7</div>
+			<div class="B box22">8</div>
+			<div class="B box23">9</div>
+			<div class="B box24">%</div>
+			<div class="B box25">sqrt</div>
+
+			<div class="B box31">4</div>
+			<div class="B box32">5</div>
+			<div class="B box33">6</div>
+			<div class="B box34">+/-</div>
+			<div class="B box35">/</div>
+
+			<div class="B box41">1</div>
+			<div class="B box42">2</div>
+			<div class="B box43">3</div>
+			<div class="B box44">+</div>
+			<div class="B box45">*</div>
+
+			<div class="B box51">0</div>
+			<div class="B box52">.</div>
+			<div class="B box53">=</div>
+			<div class="B box55">-</div>
+		</div>
+	</div>
+
+
+
+	<div class="third">
+		<div class="calculator2">
+			<!-- Экран -->
+			<div class="Box00"></div>
+			<!-- Кнопки -->
+			<div class="buttons">
+				<!-- Левое поле -->
+				<div class="left_box">
+					<div class="M">
+						<div class="BT Box11">MRC</div>
+						<div class="BT Box12">M-</div>
+						<div class="BT Box13">M+</div>
+					</div>
+
+					<div class="numbers">
+						<div class="line">
+							<div class="BT Box21">7</div>
+							<div class="BT Box22">8</div>
+							<div class="BT Box23">9</div>
+						</div>
+						<div class="line">
+							<div class="BT Box31">4</div>
+							<div class="BT Box32">5</div>
+							<div class="BT Box33">6</div>
+						</div>
+						<div class="line">
+							<div class="BT Box41">1</div>
+							<div class="BT Box42">2</div>
+							<div class="BT Box43">3</div>
+						</div>
+						<div class="line">
+							<div class="BT Box51">0</div>
+							<div class="BT Box52">.</div>
+							<div class="BT Box53">=</div>
+						</div>
+					</div>
+				</div>
+				<!-- Правое поле -->
+				<div class="right_box">
+					<div class="col1">
+						<div class="BT Box14">CE</div>
+						<div class="BT Box24">%</div>
+						<div class="BT Box34">+/-</div>
+						<div class="BT Box44">+</div>
+					</div>
+					<div class="col2">
+						<div class="BT Box15">ON/C</div>
+						<div class="BT Box25">sqrt</div>
+						<div class="BT Box35">/</div>
+						<div class="BT Box45">*</div>
+						<div class="BT Box55">-</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
